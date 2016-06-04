@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 4, 2016 9:15:26 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hib.SecondSubcategory" table="second_subcategory" catalog="popconco_popconco" optimistic-lock="version">
+        <id name="secondSubcategoryId" type="java.lang.Integer">
+            <column name="second_subcategory_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="firstSubcategory" class="hib.FirstSubcategory" fetch="select">
+            <column name="first_subcategory_ID" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
